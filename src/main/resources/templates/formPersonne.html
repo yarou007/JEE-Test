@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1.html">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ajout personne</title>
+</head>
+
+<body>
+<div layout:fragment="content">
+    <div class="mt-3">
+        <div class="col-sm-6 offset-3">
+            <div class="card">
+                <div class="card-header">New personne</div>
+                <div class="card-body">
+                    <div class="p-3">
+                        <form th:action="@{/savepersonne}" method="POST">
+                            <div class="mb-2">
+                                <label class="form-label">Name: </label>
+                                <input type="text" name="nom" class="form-control" th:value="${Personne.nom}">
+                                <span class="text-danger" th:errors="${Personne.nom}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Prenom: </label>
+                                <input type="text" name="prenom" class="form-control" th:value="${Personne.prenom}">
+                                <span class="text-danger" th:errors="${Personne.prenom}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Email: </label>
+                                <input type="email" name="email" class="form-control" th:value="${Personne.email}">
+                                <span class="text-danger" th:errors="${Personne.email}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Date de naissence: </label>
+                                <input type="date" name="dateNaissence" class="form-control"
+                                       th:value="${Personne.dateNaissence}">
+                                <span class="text-danger" th:errors="${Personne.dateNaissence}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Num tell: </label>
+                                <input type="text" name="NumTel" class="form-control" th:value="${Personne.numTel}">
+                                <span class="text-danger" th:errors="${Personne.numTel}"></span>
+                            </div>
+
+
+                            <button class="btn btn-success">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
